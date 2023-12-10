@@ -71,7 +71,7 @@ sudo apt update && sudo apt upgrade -y
   
   DHCP=ipv4
 
-<li>systemctl enable systemd-networkd
+<li>sudo systemctl enable systemd-networkd
 
 <li>sudo reboot now
 </ul>
