@@ -17,7 +17,7 @@ sudo apt update && sudo apt upgrade -y
 ## Ensure hardware able to use virtualization
 
 <ul>
-  <li>>sudo apt install -y cpu-checker
+  <li>sudo apt install -y cpu-checker
   <li>kvm-ok
 </ul>
 
@@ -32,51 +32,38 @@ sudo apt update && sudo apt upgrade -y
 
 ## Install Virtual Manager
 
-sudo apt install -y qemu-kvm virt-manager libvirt-daemon-system virtinst libvirt-clients bridge-utils
-sudo systemctl enable --now libvirtd
-sudo systemctl start libvirtd
-Configure Virtual Networking
+<ul>
+  <li>sudo apt install -y qemu-kvm virt-manager libvirt-daemon-system virtinst libvirt-clients bridge-utils
+  <li>sudo systemctl enable --now libvirtd
+  <li>sudo systemctl start libvirtd
+</ul>
 
-/etc/systemd/network/br.netdev
+## Configure Virtual Networking
+
+sudo nano /etc/systemd/network/br.netdev
 
 [NetDev]
-
 Name=br0
-
 Kind=bridge
 
-
-
-1-br0-bind.network
+sudo nano 1-br0-bind.network
 
 [Match]
-
 Name=eno1
 
-
-
 [Network]
-
 Bridge=br0
 
-
-
-/etc/systemd/network/2-br0-dhcp.network
+sudo nano /etc/systemd/network/2-br0-dhcp.network
 
 [Match]
 
 Name=br0
-
-
 
 [Network]
 
 DHCP=ipv4
 
-
-
 systemctl enable systemd-networkd
 
 sudo reboot now
-## Install Virtual Networking
-
