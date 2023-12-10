@@ -54,6 +54,7 @@ sudo apt update && sudo apt upgrade -y
   [Match]
   
   Name=eno1
+  
 
   [Network]
   
@@ -64,6 +65,7 @@ sudo apt update && sudo apt upgrade -y
   [Match]
   
   Name=br0
+  
 
   [Network]
   
