@@ -45,6 +45,7 @@ sudo apt update && sudo apt upgrade -y
 
   [NetDev]
   Name=br0
+
   Kind=bridge
 
   <li>sudo nano 1-br0-bind.network
