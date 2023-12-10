@@ -40,13 +40,14 @@ sudo apt update && sudo apt upgrade -y
 
 ## Configure Virtual Networking
 
-sudo nano /etc/systemd/network/br.netdev
+<ul>
+  <li>sudo nano /etc/systemd/network/br.netdev
 
   [NetDev]
   Name=br0
   Kind=bridge
 
-sudo nano 1-br0-bind.network
+  <li>sudo nano 1-br0-bind.network
 
   [Match]
   Name=eno1
@@ -54,7 +55,7 @@ sudo nano 1-br0-bind.network
   [Network]
   Bridge=br0
 
-sudo nano /etc/systemd/network/2-br0-dhcp.network
+<li>sudo nano /etc/systemd/network/2-br0-dhcp.network
 
   [Match]
   Name=br0
@@ -62,6 +63,7 @@ sudo nano /etc/systemd/network/2-br0-dhcp.network
   [Network]
   DHCP=ipv4
 
-systemctl enable systemd-networkd
+<li>systemctl enable systemd-networkd
 
-sudo reboot now
+<li>sudo reboot now
+</ul>
