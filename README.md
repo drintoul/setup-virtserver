@@ -44,6 +44,7 @@ sudo apt update && sudo apt upgrade -y
   <li>sudo nano /etc/systemd/network/br.netdev
 
   [NetDev]
+  
   Name=br0
 
   Kind=bridge
@@ -51,17 +52,21 @@ sudo apt update && sudo apt upgrade -y
   <li>sudo nano 1-br0-bind.network
 
   [Match]
+  
   Name=eno1
 
   [Network]
+  
   Bridge=br0
 
 <li>sudo nano /etc/systemd/network/2-br0-dhcp.network
 
   [Match]
+  
   Name=br0
 
   [Network]
+  
   DHCP=ipv4
 
 <li>systemctl enable systemd-networkd
