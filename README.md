@@ -49,7 +49,7 @@ sudo apt update && sudo apt upgrade -y
 
   Kind=bridge
 
-  <li>sudo nano 1-br0-bind.network
+  <li>sudo nano /etc/systemd/network/1-br0-bind.network
 
   [Match]
   
