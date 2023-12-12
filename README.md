@@ -1,5 +1,5 @@
-# homeserver
-Steps to setup home server
+# setup-virtserver
+Steps to setup virtual machine server
 
 ## Create Server
 
